@@ -3,10 +3,12 @@ function Student(name, gender, age) {
     this.gender = gender;
     this.age = age;
     this.marks = []
+    return this;
 }
 
 Student.prototype.setSubject = function (subjectName) {
-  this.subject. = subjectName;
+  this.subject = subjectName;
+  return this;
 }
 
 Student.prototype.addMarks = function (...marks) {
@@ -15,11 +17,12 @@ Student.prototype.addMarks = function (...marks) {
 }
 
 Student.prototype.getAverage = function () {
-  return this.marks.reduce((acc, mark) => acc + mark , 0) / this.marks.length
+  return this.marks.reduce((acc, mark) => acc + mark, 0) / this.marks.length; 
 }
 
 Student.prototype.exclude = function (reason) {
   delete this.marks;
   delete this.subject;
-  this.exclude = reason;
+  this.excluded = reason;
+  return this;
 }
